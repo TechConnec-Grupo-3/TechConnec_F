@@ -1,0 +1,110 @@
+<div class="profile-container">
+  <h2>Actualizar Perfil</h2>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+    <div class="image-upload">
+      <div
+        class="profile-image"
+        [style.backgroundImage]="
+          imagePreview
+            ? 'url(' + imagePreview + ')'
+            : 'url(assets/default-avatar.png)'
+        "
+      >
+        <input
+          type="file"
+          (change)="onImageSelected($event)"
+          accept="image/*"
+          id="image-input"
+        />
+        <label for="image-input" class="image-label">
+          <i class="fas fa-camera"></i>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        formControlName="nombre"
+        class="form-control"
+      />
+      <div
+        class="error-message"
+        *ngIf="profileForm.get('nombre')?.errors?.['required'] && profileForm.get('nombre')?.touched"
+      >
+        El nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input
+        type="text"
+        id="apellido"
+        formControlName="apellido"
+        class="form-control"
+      />
+      <div
+        class="error-message"
+        *ngIf="profileForm.get('apellido')?.errors?.['required'] && profileForm.get('apellido')?.touched"
+      >
+        El apellido es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+      />
+      <div
+        class="error-message"
+        *ngIf="profileForm.get('email')?.errors?.['email'] && profileForm.get('email')?.touched"
+      >
+        Email inválido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input
+        type="tel"
+        id="telefono"
+        formControlName="telefono"
+        class="form-control"
+      />
+      <div
+        class="error-message"
+        *ngIf="profileForm.get('telefono')?.errors?.['pattern'] && profileForm.get('telefono')?.touched"
+      >
+        Debe contener 9 dígitos
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="biografia">Biografía</label>
+      <textarea
+        id="biografia"
+        formControlName="biografia"
+        class="form-control"
+        rows="4"
+      ></textarea>
+      <div
+        class="error-message"
+        *ngIf="profileForm.get('biografia')?.errors?.['maxlength']"
+      >
+        Máximo 500 caracteres
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!profileForm.valid" class="submit-button">
+      Actualizar Perfil
+    </button>
+  </form>
+</div>
