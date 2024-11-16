@@ -1,0 +1,13 @@
+<mat-card class="confirm-card">
+  <mat-card-content>
+    <div class="card-content">
+      <mat-icon class="warning-icon">warning</mat-icon>
+      <h2>¿Estás seguro de que deseas eliminar este usuario?</h2>
+      <p>Esta acción no se puede deshacer.</p>
+      <div class="button-container">
+        <button mat-button (click)="onCancel()">Cancelar</button>
+        <button mat-raised-button color="warn" (click)="onConfirm()">Eliminar</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

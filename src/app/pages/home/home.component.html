@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #leftside mode="side" opened class="sidenav" [fixedInViewport]="false">
+
+            <ng-scrollbar class="position-relative" style="height: 100%">
+                <div class="label-config">
+                    <mat-label class="side-label">Configuracion</mat-label>
+                </div>
+                <button mat-button class="side-first" (click)="cambiarEstadoE()">Mis perfil</button>
+                <button mat-button class="side" (click)="cambiarEstadoA()">Editar perfil</button>
+                <button mat-button class="side" (click)="cambiarEstadoB()">Notificaciones</button>
+                <button mat-button class="side" (click)="cambiarEstadoC()">Eventos inscritos</button>
+                <button mat-button class="side" (click)="cambiarEstadoD()">Historial de pagos</button>
+            
+              </ng-scrollbar>
+
+            
+        </mat-sidenav>
+      
+        <!-- Área de contenido -->
+        <mat-sidenav-content class="content">
+
+            <div *ngIf="currentPage === 'event-edit'">
+                <app-event-edit></app-event-edit>
+              </div>
+              <div *ngIf="currentPage === 'event-assitance'">
+                <app-event-asisttance></app-event-asisttance>
+              </div>
+              <div *ngIf="currentPage === 'event-notification'">
+                <app-event-notification></app-event-notification>
+              </div>
+              <div *ngIf="currentPage === 'event-managment'">
+                <app-event-managment></app-event-managment>
+              </div>
+              <div *ngIf="currentPage === 'profile'">
+                <app-profile></app-profile>
+              </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+      
+
+
+
+
+
