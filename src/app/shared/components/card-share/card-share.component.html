@@ -1,0 +1,38 @@
+<mat-card class="share-card">
+  <mat-card-content>
+    <div class="card-content">
+      <h2>COMPARTIR EVENTO</h2>
+      <div class="share-options">
+        <button mat-button class="share-button" (click)="shareOn('nextdoor')">
+          <mat-icon>people</mat-icon>
+          Nextdoor
+        </button>
+        <button mat-button class="share-button" (click)="shareOn('facebook')">
+          <mat-icon>facebook</mat-icon>
+          Facebook
+        </button>
+        <button mat-button class="share-button" (click)="shareOn('twitter')">
+          <mat-icon>twitter</mat-icon>
+          Twitter
+        </button>
+        <button mat-button class="share-button" (click)="shareOn('linkedin')">
+          <mat-icon>linkedin</mat-icon>
+          LinkedIn
+        </button>
+        <button mat-button class="share-button" (click)="shareOn('email')">
+          <mat-icon>email</mat-icon>
+          Correo electrónico
+        </button>
+        <button mat-button class="share-button" (click)="copyLink()">
+          <mat-icon>content_copy</mat-icon>
+          Copiar enlace
+        </button>
+      </div>
+      <div class="close-button-container">
+        <button mat-icon-button class="close-button" (click)="closeCard()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

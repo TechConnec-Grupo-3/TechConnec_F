@@ -1,0 +1,38 @@
+.confirm-card {
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.warning-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  color: #f44336;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  color: rgba(0,0,0,0.87);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 20px;
+  color: rgba(0,0,0,0.6);
+  line-height: 1.5;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

@@ -1,0 +1,41 @@
+<div class="profile-container">
+
+  <div class="cover-photo">
+    <img src="https://img.freepik.com/vector-gratis/fondo-azul-degradado_23-2149333531.jpg?semt=ais_hybrid" alt="Portada" class="cover-img">
+    <div class="profile-photo">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="Foto de perfil" class="profile-img">
+    </div>
+  </div>
+
+  <mat-card class="info-card">
+    <mat-card-content>
+      <div class="profile-header">
+        <h1 class="profile-name">Nombre Apellido</h1>
+        <p class="profile-title">Título Profesional</p>
+        <p class="profile-location">
+          <mat-icon>location_on</mat-icon> Ciudad, País
+        </p>
+      </div>
+
+
+      <section class="profile-section">
+        <h2>Intereses</h2>
+        <div class="interests-container">
+          @for (interest of interests; track interest) {
+            <mat-chip>{{interest}}</mat-chip>
+          }
+        </div>
+      </section>
+
+      <section class="profile-section">
+        <h2>Habilidades</h2>
+        <div class="skills-container">
+          @for (skill of skills; track skill) {
+            <mat-chip color="primary">{{skill}}</mat-chip>
+          }
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>
+  
