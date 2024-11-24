@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+    <mat-card-title>Principal</mat-card-title>
+    <mat-form-field class="custom-form-field">
+        <mat-label>Hoy</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let option of filteredOptions" [value]="option">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</mat-toolbar>
+<div>
+  @for (notification of notifications; track notification) {
+    <app-card-notification [notification]="notification"></app-card-notification>
+  }@empty {
+    <p>No se encontraron notificaciones</p>
+  }
+</div>
