@@ -1,0 +1,12 @@
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-top: 16px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+} 
