@@ -1,0 +1,30 @@
+<div class="comments-container">
+  <div class="comments-header">
+    <button mat-raised-button 
+            color="primary" 
+            (click)="openAddDialog()">
+      <mat-icon>add_comment</mat-icon>
+      Agregar Comentario
+    </button>
+  </div>
+
+  <div class="comments-table">
+    <div class="comments-row" *ngFor="let comment of comments; let i = index">
+      <!-- Primera columna -->
+      <div class="comment-cell" *ngIf="i % 2 === 0">
+        <app-card-comment 
+          [comment]="comment"
+          (commentUpdated)="loadComments()">
+        </app-card-comment>
+      </div>
+      <!-- Segunda columna -->
+      <div class="comment-cell" *ngIf="i % 2 === 0 && comments[i + 1]">
+        <app-card-comment 
+          [comment]="comments[i + 1]"
+          (commentUpdated)="loadComments()">
+        </app-card-comment>
+      </div>
+    </div>
+  </div>
+</div>
+
