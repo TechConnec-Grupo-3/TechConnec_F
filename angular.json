@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "techconnec-front": {
+    "proyecto": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/techconnec-front",
+            "outputPath": "dist/proyecto",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -21,15 +21,18 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -59,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "techconnec-front:build:production"
+              "buildTarget": "proyecto:build:production"
             },
             "development": {
-              "buildTarget": "techconnec-front:build:development"
+              "buildTarget": "proyecto:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8f2ceef3-9f19-4974-8187-774c5bffbb9f"
   }
 }
