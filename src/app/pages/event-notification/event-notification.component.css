@@ -1,0 +1,27 @@
+.toolbar {
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro */
+}
+
+mat-form-field {
+    margin-left: 100px; /* Espacio entre el título y el form field */
+    margin-top: 20px;
+    
+  }
+
+.custom-button {
+  background-color: #98f79c; /* Cambia el color de fondo */
+  /*border-style: hidden;*/
+  margin-left: 10px;
+  border-width: 2px;
+  --mdc-outlined-button-outline-color: rgb(61, 158, 82);
+  --mat-toolbar-container-text-color: red;
+  
+}
+
+.custom-form-field {
+  font-size: 12px; /* Cambia el tamaño de la fuente */
+  min-height: 50px; /* Ajusta la altura mínima */
+  block-size: 110%;
+  padding-block-start: 2px;
+}
