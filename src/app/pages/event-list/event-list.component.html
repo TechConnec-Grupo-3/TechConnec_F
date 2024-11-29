@@ -1,0 +1,23 @@
+<mat-toolbar class="toolbar">
+  <mat-card-title>Filtrar</mat-card-title>
+  <mat-form-field class="custom-form-field">
+      <mat-label>Estado</mat-label>
+      <mat-select [(ngModel)]="selectedFilter" (selectionChange)="onFilterChange()">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  <button mat-stroked-button class="custom-button">Aceptar</button>
+  <mat-label>{{selectedFilter}}</mat-label>
+</mat-toolbar>
+
+<div>
+@for (event of displayedEvents; track event) {
+  <app-card-event 
+    [event]="event"
+    buttonMode="view"
+    (buttonClicked)="handleButtonClick($event)">
+  </app-card-event>
+}@empty {
+  <p>No se encontraron eventos</p>
+}
+</div>

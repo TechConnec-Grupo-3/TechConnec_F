@@ -1,0 +1,25 @@
+.edit-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+  
+.mat-field {
+    width: 100%;
+}
+  
+.form-field {
+    margin-top: 10px;
+    width: 400px;
+}
+
+.mat-field-date{
+    margin-right: 10px;
+    width: 120px;
+}
+
+.form-button{
+    display: flex;
+    justify-content: flex-end;
+}
