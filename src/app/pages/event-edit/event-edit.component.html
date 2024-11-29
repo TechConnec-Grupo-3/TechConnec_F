@@ -1,0 +1,62 @@
+<div class="edit-container">
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Editar Evento</mat-card-title>
+        </mat-card-header>
+  
+        <mat-card-content>
+          <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+            <div class="form-field">
+                <mat-form-field class="mat-field">
+                    <mat-label>Titulo</mat-label>
+                    <input matInput formControlName="titulo">
+                </mat-form-field>
+            </div>
+            
+            <div class="form-field">
+                <mat-form-field class="mat-field">
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput formControlName="descripcion">
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field class="mat-field">
+                    <mat-label>Fecha</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="fecha">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>
+            <mat-form-field class="mat-field-date">
+                <mat-label>HH</mat-label>
+                <mat-select formControlName="hh">
+                    <mat-option *ngFor="let option of optionshour" [value]="option">{{ option }}</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="mat-field-date">
+                <mat-label>mm</mat-label>
+                <mat-select formControlName="mm">
+                    <mat-option *ngFor="let option of optionsminutes" [value]="option">{{ option }}</mat-option>
+                    
+                </mat-select>
+            </mat-form-field>
+
+            <div class="form-field">
+                <mat-form-field class="mat-field">
+                    <mat-label>Ubicacion</mat-label>
+                    <input matInput formControlName="ubicacion">
+                </mat-form-field>
+            </div>
+            <div class="form-button">
+                <button mat-raised-button color="primary" type="submit">Guardar Cambios</button>
+            </div>
+          </form>
+        </mat-card-content>
+  
+      </mat-card>
+
+    
+</div>

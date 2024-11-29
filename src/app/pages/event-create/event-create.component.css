@@ -1,0 +1,25 @@
+.event-create-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.event-create-container mat-card {
+  padding: 20px;
+}
+
+.event-create-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-create-container .form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.event-create-container mat-form-field {
+  width: 100%;
+}
