@@ -1,0 +1,40 @@
+<div class="share-dialog">
+  <mat-card class="share-card">
+    <mat-card-content>
+      <div class="card-content">
+        <h2>COMPARTIR EVENTO</h2>
+        
+        <div class="share-link-container">
+          <mat-form-field class="share-link-field" appearance="outline">
+            <mat-label>Enlace del evento</mat-label>
+            <input matInput [value]="data.shareUrl" readonly #shareInput>
+            <button mat-icon-button matSuffix 
+                    (click)="copyLink()" 
+                    matTooltip="Copiar enlace">
+              <mat-icon>content_copy</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="share-options">
+          <button mat-stroked-button class="share-button" (click)="copyLink()">
+            <mat-icon>content_copy</mat-icon>
+            Copiar enlace
+          </button>
+          <a mat-stroked-button class="share-button" 
+             [href]="'mailto:?subject=Compartir Evento&body=' + data.shareUrl"
+             target="_blank">
+            <mat-icon>email</mat-icon>
+            Correo electrónico
+          </a>
+        </div>
+
+        <div class="close-button-container">
+          <button mat-icon-button class="close-button" (click)="closeCard()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

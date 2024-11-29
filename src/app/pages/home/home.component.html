@@ -1,0 +1,45 @@
+<div class="layout-wrapper">
+  <app-navbar 
+    (searchResults)="onSearchResults($event)"
+    (profileClick)="showProfile()"
+    (conocenosClick)="showConocenos()"
+    (funcionalidadesClick)="showFuncionalidades()"
+    (inicioClick)="showInicio()">
+  </app-navbar>
+  
+  <div class="content-wrapper">
+    @switch (currentView) {
+      @case ('list') {
+        <app-event-list 
+          #eventList 
+          buttonMode="details"
+          (showDetailsEvent)="onShowDetails($event)">
+        </app-event-list>
+      }
+      @case ('details') {
+        <app-event-details 
+          [eventId]="selectedEventId"
+          (backToList)="showEventList()">
+        </app-event-details>
+      }
+      @case ('profile') {
+        <app-profile-p></app-profile-p>
+      }
+      @case ('conocenos') {
+        <app-conocenos></app-conocenos>
+      }
+      @case ('funcionalidades') {
+        <app-functionalities></app-functionalities>
+      }
+      @case ('inicio') {
+        <app-inicio></app-inicio>
+      }
+    }
+  </div>
+</div>
+      
+
+
+
+
+

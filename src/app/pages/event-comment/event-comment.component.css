@@ -1,0 +1,47 @@
+.comments-container {
+  padding: 16px;
+}
+
+.comments-header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comments-table {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comments-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comment-cell {
+  min-width: 0; /* Permite que las tarjetas se ajusten correctamente */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .comments-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .comment-cell:empty {
+    display: none;
+  }
+}
+
+/* Asegura que las tarjetas de comentarios tengan la misma altura en cada fila */
+:host ::ng-deep app-card-comment {
+  display: block;
+  height: 100%;
+}
+
+:host ::ng-deep app-card-comment mat-card {
+  height: 100%;
+  margin: 0;
+}

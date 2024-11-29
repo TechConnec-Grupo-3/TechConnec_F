@@ -1,0 +1,28 @@
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        {{ comment.userName }}
+        <span *ngIf="isCurrentUserComment" class="owner-badge">Tú</span>
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ comment.submittedAt}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{ comment.comments }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="custom-card-action" *ngIf="isCurrentUserComment">
+        <button mat-button (click)="openDialog()" matTooltip="Editar comentario">
+            <mat-icon aria-hidden="false" aria-label="Edit comment" fontIcon="edit"></mat-icon>
+        </button>
+        <button mat-button 
+                (click)="deleteComment()" 
+                matTooltip="Eliminar comentario"
+                color="warn">
+            <mat-icon aria-hidden="false" aria-label="Delete comment" fontIcon="delete_forever"></mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

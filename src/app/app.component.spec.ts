@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'techconnec-front' title`, () => {
+  it(`should have the 'event-api' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('techconnec-front');
+    expect(app.title).toEqual('event-api');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, techconnec-front');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, event-api');
   });
 });
