@@ -1,0 +1,12 @@
+<div class="events-container">
+  <div class="event-card" *ngFor="let event of events">
+    <img [src]="event.avatar" alt="Avatar" class="avatar">
+    <h2>{{ event.title }}</h2>
+    <p><strong>Fecha:</strong> {{ event.date }}</p>
+    <p><strong>Hora:</strong> {{ event.time }}</p>
+    <p><strong>Ubicación:</strong> {{ event.location }}</p>
+    <p>{{ event.description }}</p>
+    <button (click)="editEvent(event)">Editar</button>
+  </div>
+  <button (click)="createEvent()">Crear Nuevo Evento</button>
+</div>

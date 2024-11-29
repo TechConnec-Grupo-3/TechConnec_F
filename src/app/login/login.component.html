@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h2>Iniciar Sesión555</h2>
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <div class="form-group">
+      <input 
+        type="email" 
+        placeholder="Email" 
+        [(ngModel)]="email" 
+        name="email" 
+        required
+        #emailInput="ngModel">
+    </div>
+    <div class="form-group">
+      <input 
+        type="password" 
+        placeholder="Contraseña" 
+        [(ngModel)]="password" 
+        name="password"
+        required
+        #passwordInput="ngModel">
+    </div>
+    <button type="submit" class="login-button">Ingresar</button>
+    <button type="button" class="forgot-password" (click)="forgotPassword()">
+      ¿Olvidaste tu contraseña?
+    </button>
+  </form>
+</div> 

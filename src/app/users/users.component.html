@@ -1,0 +1,66 @@
+<div class="users-container">
+  <div class="search-section">
+    <h2>Lista de Usuarios</h2>
+    <div class="search-container">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        (ngModelChange)="filterUsers()"
+        placeholder="Buscar por ID, nombre, email o rol..." 
+        class="search-input"
+      >
+      <i class="fas fa-search search-icon"></i>
+    </div>
+  </div>
+
+  <div class="users-grid">
+    @for (user of filteredUsers; track user.id) {
+      <div class="user-card" (click)="openUserModal(user)">
+        <div class="user-id">#{{ user.id }}</div>
+        <img [src]="user.avatar" [alt]="user.name" class="user-avatar">
+        <div class="user-info">
+          <h3>{{ user.name }}</h3>
+          <p class="user-email">{{ user.email }}</p>
+          <span class="user-role" [class.admin-role]="user.role === 'Administrador'">
+            {{ user.role }}
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="selectedUser">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Detalles del Usuario #{{ selectedUser.id }}</h2>
+      <button class="close-button" (click)="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="user-details">
+        <img [src]="selectedUser.avatar" [alt]="selectedUser.name" class="modal-avatar">
+        <div class="detail-row">
+          <label>Nombre:</label>
+          <p>{{ selectedUser.name }}</p>
+        </div>
+        <div class="detail-row">
+          <label>Email:</label>
+          <p>{{ selectedUser.email }}</p>
+        </div>
+        <div class="detail-row">
+          <label>Rol:</label>
+          <p>{{ selectedUser.role }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-edit" (click)="editUser(selectedUser)">
+        <i class="fas fa-edit"></i> Editar
+      </button>
+      <button class="btn btn-delete" (click)="deleteUser(selectedUser)">
+        <i class="fas fa-trash"></i> Eliminar
+      </button>
+    </div>
+  </div>
+</div>
