@@ -1,0 +1,96 @@
+<div class="page-container">
+  <button mat-button (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+    Volver a la lista
+  </button>
+
+  <div class="search-container">
+    <mat-form-field appearance="fill">
+      <mat-label>ID del Evento</mat-label>
+      <input matInput type="number" [formControl]="eventIdControl" placeholder="Ingrese el ID">
+    </mat-form-field>
+
+    <button mat-raised-button 
+            color="primary" 
+            (click)="searchEvent()" 
+            [disabled]="isLoading">
+      <mat-icon>search</mat-icon>
+      Buscar Evento
+    </button>
+  </div>
+
+  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+  <div class="content-container">
+    <div *ngIf="eventDetails" class="event-card">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ eventDetails.title }}</mat-card-title>
+          <mat-card-subtitle>{{ eventDetails.typeEvent }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image 
+             [src]="eventImageUrl" 
+             [alt]="eventDetails.title"
+             class="event-banner">
+
+        <mat-card-content>
+          <div class="event-info">
+            <h3>Información del Evento</h3>
+            <p><mat-icon>description</mat-icon> {{ eventDetails.description }}</p>
+            <p><mat-icon>location_on</mat-icon> {{ eventDetails.location }}</p>
+            <p><mat-icon>calendar_today</mat-icon> {{ eventDetails.eventDate }}</p>
+            <p><mat-icon>access_time</mat-icon> {{ eventDetails.eventTime }}</p>
+          </div>
+
+          <mat-divider class="my-3"></mat-divider>
+
+          <div class="exponent-info">
+            <h3>Información del Exponente</h3>
+            <div class="exponent-content">
+              <img [src]="exponentImageUrl" 
+                   [alt]="eventDetails.exponentName"
+                   class="exponent-image">
+              <div class="exponent-details">
+                <p><strong>Nombre:</strong> {{ eventDetails.exponentName }}</p>
+                <p><strong>Descripción:</strong> {{ eventDetails.exponentDescription }}</p>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+          <button mat-raised-button 
+                  color="primary" 
+                  (click)="openShareDialog()"
+                  matTooltip="Compartir evento">
+            <mat-icon>share</mat-icon>
+            Compartir
+          </button>
+          <a mat-raised-button 
+             color="accent" 
+             (click)="onRegister()" 
+             target="_blank">
+            <mat-icon>how_to_reg</mat-icon>
+            Registrarse
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="additional-section">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Comentarios</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <app-event-comment 
+            *ngIf="eventDetails?.eventId"
+            [eventId]="eventDetails!.eventId">
+          </app-event-comment>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

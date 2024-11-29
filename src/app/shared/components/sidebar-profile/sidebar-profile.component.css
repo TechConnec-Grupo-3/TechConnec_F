@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: 100%;
+  display: flex;
+  top: 80px;
+}
+
+.sidenav {
+  width: 250px;
+  background-color: white;
+  padding-top: 20px;
+}
+
+mat-nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+mat-nav-list a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+mat-nav-list a:hover {
+  background-color: #34495e;
+}
+
+.side{
+    width: 100%;
+}
+
+
+.side-label{
+    margin: 20px;
+}
