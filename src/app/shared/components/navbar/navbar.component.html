@@ -1,0 +1,56 @@
+<mat-toolbar class="toolbar">
+    <img mat-card-image src="/logo.jpg" class="w-10 h-10" alt="Logo" style="cursor: pointer;" (click)="onInicioClick()">
+
+    <div class="search-container">
+        <mat-form-field appearance="outline" class="search-input">
+            <input matInput
+                   [(ngModel)]="searchQuery"
+                   (input)="onSearchInput()"
+                   [matAutocomplete]="auto"
+                   placeholder="Buscar...">
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event.option.value)">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="search-type-select">
+            <mat-select [(ngModel)]="searchType" placeholder="Tipo">
+                <mat-option value="category">Categoría</mat-option>
+                <mat-option value="eventType">Tipo de Evento</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="button-container">
+        <button mat-button (click)="onInicioClick()">Inicio</button>
+        <!--
+        <button mat-button (click)="onConocenosClick()">Conocenos</button>
+        <button mat-button (click)="onFuncionalidadesClick()">Funcionalidades</button>
+        
+        -->
+
+        @if (!isAuthenticated) {
+            <button mat-button (click)="onRegisterClick()">Registrarse</button>
+            <button mat-button (click)="onLoginClick()">Iniciar Sesión</button>
+        } @else {
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="button-avatar">
+                <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" 
+                     alt="Photo of a Shiba Inu" 
+                     class="profile-image">
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="onProfileClick()">
+                    <mat-icon>person</mat-icon>
+                    <span>Perfil</span>
+                </button>
+                <button mat-menu-item (click)="onLogout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Cerrar sesión</span>
+                </button>
+            </mat-menu>
+        }
+    </div>
+</mat-toolbar>

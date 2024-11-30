@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="example-container">
+      <mat-card>
+        <mat-card-content>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+           <div class="container-label">
+            <mat-label class="mat-label">Bienvenido</mat-label>
+           </div>
+           <mat-label>Correo electronico*</mat-label>
+            <mat-form-field appearance="fill">
+              <input
+                matInput
+                placeholder="usuario@gmail.com"
+                formControlName="email"
+                (blur)="updateErrorMessage()"
+                required
+              />
+              @if (loginForm.value.email.invalid) {
+                <mat-error>{{errorMessage()}}</mat-error>
+              }
+            </mat-form-field>
+            <mat-label>Contraseña*</mat-label>
+            <mat-form-field appearance="fill">
+              <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password"/>
+              <button
+                type="button"
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()"
+              >
+                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <button class="button-sesion" type="submit" mat-stroked-button>Iniciar sesión
+            </button>
+            <a class="button-link" mat-button routerLink="/forgot-password" target="_blank">¿Olvidaste tu contraseña?</a>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="image-container">
+    <img mat-card-image src="https://img.freepik.com/vector-gratis/fondo-degradado-oscuro-espacio-copia_53876-99548.jpg" class="w-20 h-20" alt="Logo">
+    </div>
+    
+  </div>

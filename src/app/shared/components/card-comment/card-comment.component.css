@@ -1,0 +1,60 @@
+.example-card {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-mdc-card-content {
+  flex-grow: 1;
+}
+
+.custom-card-action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.example-header-image {
+  background-image: url('https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=');
+  background-size: cover;
+}
+
+.owner-badge {
+  font-size: 12px;
+  background-color: #e0e0e0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  color: #666;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+mat-card {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Opcional: resaltar sutilmente los comentarios del usuario actual */
+:host-context(.comments-grid) mat-card:has(.owner-badge) {
+  border-left: 3px solid #1976d2;
+}
+
+button mat-icon {
+  color: #666;
+}
+
+button:hover mat-icon {
+  color: #1976d2;
+}
+
+button:last-child:hover mat-icon {
+  color: #f44336;
+}

@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api/v1',
+  apiUrl: 'https://techconnec-api.onrender.com/api/v1',
   paypalReturnUrl: 'http://localhost:4200/home'
 };

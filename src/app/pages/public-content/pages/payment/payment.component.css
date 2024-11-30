@@ -1,0 +1,42 @@
+.payment-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative; /* Added to position the logo */
+}
+
+.paypal-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    opacity: 0.7; /* Slightly faded for aesthetic purpose */
+}
+.payment-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.payment-amount {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.payment-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-button:hover {
+    background-color: #218838;
+}

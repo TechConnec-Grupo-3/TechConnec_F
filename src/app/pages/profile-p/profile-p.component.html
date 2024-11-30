@@ -1,0 +1,63 @@
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #leftside mode="side" opened class="sidenav" [fixedInViewport]="false">
+
+            <ng-scrollbar class="position-relative" style="height: 100%">
+                <div class="menu-container">
+                    <div class="main-menu">
+                        <div class="label-config">
+                            <mat-label class="side-label">Configuración</mat-label>
+                        </div>
+                        <button mat-button class="side-first" (click)="cambiarEstadoE()">Mi perfil</button>
+                        <button mat-button class="side" (click)="cambiarEstadoA()">Editar perfil</button>
+                        <button mat-button class="side" (click)="cambiarEstadoB()">Notificaciones</button>
+                        <button mat-button class="side" (click)="cambiarEstadoC()">Eventos inscritos</button>
+                        <button mat-button class="side" (click)="cambiarEstadoD()">Historial de pagos</button>
+                        <button mat-button class="side" (click)="cambiarEstadoF()">Crear evento</button>
+                        <button mat-button class="side" (click)="cambiarEstadoG()">Mis eventos</button>
+                    </div>
+
+                    <!-- Botón de eliminar cuenta separado -->
+                    <div class="danger-zone">
+                        <mat-divider></mat-divider>
+                        <button mat-button 
+                                class="delete-account-btn" 
+                                (click)="openDeleteAccountDialog()"
+                                color="warn">
+                            <mat-icon>delete_forever</mat-icon>
+                            Eliminar cuenta
+                        </button>
+                    </div>
+                </div>
+            </ng-scrollbar>
+
+            
+        </mat-sidenav>
+      
+        <!-- Área de contenido -->
+        <mat-sidenav-content class="content">
+
+            <div *ngIf="currentPage === 'profile-edit'">
+                <app-edit-profile></app-edit-profile>
+              </div>
+              <div *ngIf="currentPage === 'event-assitance'">
+                
+                <app-event-notification></app-event-notification>
+              </div>
+              <div *ngIf="currentPage === 'event-notification'">
+                
+                <app-event-managment></app-event-managment>
+              </div>
+              <div *ngIf="currentPage === 'event-managment'">
+                <app-event-asisttance></app-event-asisttance>
+              </div>
+              <div *ngIf="currentPage === 'profile'">
+                <app-profile></app-profile>
+              </div>
+              <div *ngIf="currentPage === 'event-create'">
+                <app-event-create></app-event-create> <!-- Agregar el componente de creación de eventos -->
+              </div>
+              <div *ngIf="currentPage === 'event-search'">
+                <app-event-search></app-event-search>
+              </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>

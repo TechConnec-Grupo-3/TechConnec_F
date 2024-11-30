@@ -1,0 +1,20 @@
+<div class="search-container">
+    <mat-form-field appearance="fill">
+      <mat-label>ID del Evento</mat-label>
+      <input matInput type="number" placeholder="Ingrese el ID">
+    </mat-form-field>
+
+    <button mat-raised-button 
+            color="primary" >
+      <mat-icon>search</mat-icon>
+      Buscar Evento
+    </button>
+  </div>
+
+<div>
+    @for (event of filteredEvents; track event) {
+      <app-card-event-search [event]="event" (deleteEvent)="onDeleteEvent(event)"></app-card-event-search>
+    }@empty {
+      <p>No se encontraron eventos</p>
+    }
+  </div>

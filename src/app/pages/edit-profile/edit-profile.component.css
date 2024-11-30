@@ -1,0 +1,37 @@
+.profile-edit-container {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor en la página */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff; /* Fondo blanco */
+  }
+  
+  mat-card {
+    border-radius: 8px; /* Bordes redondeados para el mat-card */
+  }
+  
+  mat-card-header {
+    background-color: #f5f5f5; /* Color de fondo del encabezado */
+    border-bottom: 1px solid #e0e0e0; /* Línea inferior */
+  }
+  
+  mat-card-title {
+    font-size: 24px; /* Tamaño de fuente del título */
+    font-weight: bold; /* Negrita */
+  }
+  
+  mat-form-field {
+    width: 100%; /* Ancho completo para los campos del formulario */
+    margin-bottom: 16px; /* Espaciado inferior entre campos */
+  }
+  
+  .form-button {
+    display: flex; /* Usar flexbox para alinear el botón */
+    justify-content: flex-end; /* Alinear el botón a la derecha */
+  }
+  
+  button {
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del botón */
+  }
